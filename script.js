@@ -1,9 +1,12 @@
-let url="https://newsapi.org/v2/everything?qInTitle=world&from=2021-12-29&sortBy=publishedAt&apiKey=7d7e7961b48a45d9bcb1d78f59329f2b"
+
+
+
+let url="https://newsapi.org/v2/everything?q=tesla&from=2021-12-30&sortBy=publishedAt&apiKey=7d7e7961b48a45d9bcb1d78f59329f2b"
 
 const worldBtn= document.getElementById("world-btn");
 
-const articlList= [
 
+const articlList= [
     fetch(url).then((responsive) => {
         responsive.json().then((responsive) => {
             console.log([responsive.articles[0].urlToImage, responsive.articles[0].title, responsive.articles[0].url]);
@@ -11,6 +14,7 @@ const articlList= [
         }).catch
     })
 ];
+
 
 
 const news = document.getElementById("hiii").innerHTML= articlList.map(element => 
