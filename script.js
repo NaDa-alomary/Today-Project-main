@@ -1,6 +1,8 @@
-url="https://newsapi.org/v2/everything?qInTitle=world&from=2021-12-29&sortBy=publishedAt&apiKey=7d7e7961b48a45d9bcb1d78f59329f2b"
+let url="https://newsapi.org/v2/everything?qInTitle=world&from=2021-12-29&sortBy=publishedAt&apiKey=7d7e7961b48a45d9bcb1d78f59329f2b"
 
-const articlesss= [
+const worldBtn= document.getElementById("world-btn");
+
+const articlList= [
 
     fetch(url).then((responsive) => {
         responsive.json().then((responsive) => {
@@ -11,7 +13,7 @@ const articlesss= [
 ];
 
 
-document.getElementById("hiii").innerHTML= articlesss.map(element => 
+const news = document.getElementById("hiii").innerHTML= articlList.map(element => 
     `
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
     <div class="col">
