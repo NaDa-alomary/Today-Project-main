@@ -5,17 +5,21 @@ let url="https://newsapi.org/v2/everything?q=tesla&from=2021-12-30&sortBy=publis
 
 const worldBtn= document.getElementById("world-btn");
 
+worldBtn.addEventListener('click', funcListTopics )
 
-const articlList= [
+function funcListTopics(){
+
     fetch(url).then((responsive) => {
         responsive.json().then((responsive) => {
             console.log([responsive.articles[0].urlToImage, responsive.articles[0].title, responsive.articles[0].url]);
             
         }).catch
     })
+}
+
+const articlList= [
+    funcListTopics()
 ];
-
-
 
 const news = document.getElementById("hiii").innerHTML= articlList.map(element => 
     `
