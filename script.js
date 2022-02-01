@@ -1,54 +1,40 @@
+const apiKey= `7d7e7961b48a45d9bcb1d78f59329f2b`
+let apiCategory="sport";
 
-let buttons= document.querySelector(".nav-link");
-function acctive(){
-   for(let buttonClick of buttons) {
-       buttonClick.addEventListener("click",(event) => {
-           event.target.classList.add("active");
-           console.log("hiiii")
-      })
-   }
-}
-
-// an example I copied from javascript documentation
- //let btn = document.querySelector(".nav-link");
- //btn.addEventListener('click', function(event){
- //   console.log("Button Clicked");
- //});
+const newsApi=`https://newsapi.org/v2/top-headlines?category=${apiCategory}&from=2022-01-01&sortBy=publishedAt&pageSize=9&apiKey=${apiKey}`
 
 
-let apiKey= `7d7e7961b48a45d9bcb1d78f59329f2b`
-let url=`https://newsapi.org/v2/everything?q=${news}&from=2021-12-31&sortBy=publishedAt&apiKey=${apiKey}`
+  
+let btn = document.getElementById("general-btn");
+let generalNews;
+btn.addEventListener('click', function(event){
+  fetch(newsApi); 
+  console.log("Button Clicked");
+});
+ 
 
-const worldBtn= document.getElementById("world-btn");
 
 
-function funcListTopics(){
-    fetch('url')
-    .then(response => response.json())
-    .then(data => console.log(data));
-}
+fetch(newsApi)
+  .then(response => response.json())
+  .then(data => {
 
-const articlList= [
-   funcListTopics()
-];
-
-const news = document.getElementById("hiii").innerHTML= data.articlList.map(element => 
-    `
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-    <div class="col">
-      <div class="card shadow-sm">
-        <div class="col-md-3">
-          <img class="img-fluid" src="${element.urlToImage}">
-        </div>
-        <div class="card-body">
-          <p class="card-text">${element.title}</p>
-          <div class="d-flex justify-content-between align-items-center">
-            <div class="btn-group">
-              <a href="${element.url}" class="read-more">Read more ></a>
-            </div>
+    document.getElementById("newsCards").innerHTML= data.articles.map(element => 
+      `
+      <div class="col-4">
+            <div class="card" style="width: 20rem;">
+              <img src="${element.urlToImage}" class="card-img-top" >
+              <div class="card-body">
+                <h5 class="card-title">${element.title}</h5>
+                <p class="card-text">${element.description}${element.publishedAt}</p>
+              </div>
+              <div class="card-body">
+                <a href="${element.url}" class="card-link">View</a>
+              </div>
+            </div>       
           </div>
-        </div>
-      </div>
-    </div>
-    `
-).join('')
+      `
+  ).join('')
+
+
+  });
