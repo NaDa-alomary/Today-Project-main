@@ -1,27 +1,38 @@
 
+let buttons= document.querySelector(".nav-link");
+function acctive(){
+   for(let buttonClick of buttons) {
+       buttonClick.addEventListener("click",(event) => {
+           event.target.classList.add("active");
+           console.log("hiiii")
+      })
+   }
+}
+
+// an example I copied from javascript documentation
+ //let btn = document.querySelector(".nav-link");
+ //btn.addEventListener('click', function(event){
+ //   console.log("Button Clicked");
+ //});
 
 
-let url="https://newsapi.org/v2/everything?q=tesla&from=2021-12-30&sortBy=publishedAt&apiKey=7d7e7961b48a45d9bcb1d78f59329f2b"
+let apiKey= `7d7e7961b48a45d9bcb1d78f59329f2b`
+let url=`https://newsapi.org/v2/everything?q=${news}&from=2021-12-31&sortBy=publishedAt&apiKey=${apiKey}`
 
 const worldBtn= document.getElementById("world-btn");
 
-worldBtn.addEventListener('click', funcListTopics )
 
 function funcListTopics(){
-
-    fetch(url).then((responsive) => {
-        responsive.json().then((responsive) => {
-            console.log([responsive.articles[0].urlToImage, responsive.articles[0].title, responsive.articles[0].url]);
-            
-        }).catch
-    })
+    fetch('url')
+    .then(response => response.json())
+    .then(data => console.log(data));
 }
 
 const articlList= [
-    funcListTopics()
+   funcListTopics()
 ];
 
-const news = document.getElementById("hiii").innerHTML= articlList.map(element => 
+const news = document.getElementById("hiii").innerHTML= data.articlList.map(element => 
     `
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
     <div class="col">
