@@ -7,3 +7,9 @@
     box-shadow: 10px 3px 10px 1px rgba(204, 204, 204, 1);
   }
   
+
+.nav-item:hover {
+  transform: scale(1.1);
+  
+}
+
