@@ -40,13 +40,14 @@ function fetchCategory(){
 fetchCategory();
 
 //news search
-const searchNewsAPI=`https://newsapi.org/v2/everything?category=${category}&sortBy=publishedAt&language=en&pageSize=9&apiKey=${apiKey}`
-let input = document.getElementById("searchWord").value;
+let searchNewsAPI=`https://newsapi.org/v2/everything?category=${category}&sortBy=publishedAt&language=en&pageSize=9&apiKey=${apiKey}`
+let input = document.getElementById("searchWord");
 const searchBtn= document.getElementById("searchbtn") ;
 
 searchBtn.addEventListener("click",(event) =>{
   event.preventDefault()
-  searchNewsAPI=`https://newsapi.org/v2/everything?q=${input}&sortBy=publishedAt&language=en&pageSize=9&apiKey=${apiKey}`
+  let userInput=input.value;
+  searchNewsAPI=`https://newsapi.org/v2/everything?q=${userInput}&sortBy=publishedAt&language=en&pageSize=9&apiKey=${apiKey}`
   fetch(searchNewsAPI)
   .then(response => response.json())
   .then(data => {
