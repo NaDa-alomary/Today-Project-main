@@ -69,10 +69,35 @@ searchBtn.addEventListener("click",(event) =>{
 //weather api
 let weatherApiKey="014519cf89c748a284f7afaa0265440b"
 
-let city= "Riyadh";
 let searchCitybtn = document.getElementById("srchcitybtn");
 searchCitybtn.addEventListener("click",(event) => {
   event.preventDefault()
   city= document.getElementById("input-city").value;
-  console.log(city);
+  fetchWeather();
 })
+
+function fetchWeather(){
+  fetch(`http://api.weatherbit.io/v2.0/current?key=${weatherApiKey}&city=${city}`)
+  .then(res =>{
+    res.json().then (data =>{
+      console.log(data.data[0])
+      let city_name =data.data[0].city_name;
+      let temp = data.data[0].app_temp;
+      let description = data.data[0].weather.description;
+      let icon = data.data[0].weather.icon;
+      document.querySelector(".weather").innerHTML = 
+      `<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <h5>${city_name}</h5>
+            <h6>${temp}</h6>
+            <h6>${description}</h6>
+            <img src="https://www.weatherbit.io/static/img/icons/${icon}.png"</img>
+          </div>
+        </div>
+      </div>
+    </div>`
+    })
+  })
+}
