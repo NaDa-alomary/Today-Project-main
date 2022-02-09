@@ -25,11 +25,8 @@ function fetchCategory(){
             <div class="card" style="width: 20rem;">
               <img src="${element.urlToImage}" class="card-img-top" >
               <div class="card-body">
-                <h5 class="card-title">${element.title}</h5>
+                <a href="${element.url}" class="card-link" style="text-decoration:none; color: black;"><h5 class="card-title">${element.title}</h5></a>
                 <p class="card-text">${element.description}${element.publishedAt}</p>
-              </div>
-              <div class="card-body">
-                <a href="${element.url}" class="card-link">View</a>
               </div>
             </div>       
           </div>
@@ -57,11 +54,8 @@ searchBtn.addEventListener("click",(event) =>{
             <div class="card" style="width: 20rem;">
               <img src="${element.urlToImage}" class="card-img-top" >
               <div class="card-body">
-                <h5 class="card-title">${element.title}</h5>
+              <a href="${element.url}" class="card-link" style="text-decoration:none; color: black;"><h5 class="card-title">${element.title}</h5></a>
                 <p class="card-text">${element.description}${element.publishedAt}</p>
-              </div>
-              <div class="card-body">
-                <a href="${element.url}" class="card-link">View</a>
               </div>
             </div>       
           </div>
@@ -73,22 +67,12 @@ searchBtn.addEventListener("click",(event) =>{
 
 
 //weather api
-//const weatherApi= `api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid={API key}`
-//
-//fetch(weatherApi)
-//  .then(response => response.json())
-//  .then(data => {
-//    document.getElementById("weathercard").innerHTML 
-//      `
-//      <div class="card" style="width: 100%;">
-//          <div class="card-body">
-//            <h5 class="card-title">..</h5>
-//            <p class="card-text">
-//            
-//            
-//            </p>
-//          </div>
-//        </div>
-//      `
-//      .join('')
-//  });
+let weatherApiKey="014519cf89c748a284f7afaa0265440b"
+
+let city= "Riyadh";
+let searchCitybtn = document.getElementById("srchcitybtn");
+searchCitybtn.addEventListener("click",(event) => {
+  event.preventDefault()
+  city= document.getElementById("input-city").value;
+  console.log(city);
+})

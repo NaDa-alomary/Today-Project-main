@@ -21,51 +21,44 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
         NRT News
       </a>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav nav-tabs">
+        <ul class="navbar-nav nav-tabs" id="links">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">News</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./weather.html">Weather</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <br>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav nav-tabs mx-5" id="links">
-          <li class="nav-item">
-            <a class="nav-link active" id="general"href="#">General</a>
+            <a class="nav-link text-dark" id="general"href="#">General</a>
           </li>
           <li class="nav-item mx-5">
-            <a class="nav-link" id="entertainment"href="#">Entertainment</a>
+            <a class="nav-link text-dark" id="entertainment"href="#">Entertainment</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link  " id="business" href="#">Business</a>
+            <a class="nav-link  text-dark" id="business" href="#">Business</a>
           </li>
           <li class="nav-item mx-5">
-            <a class="nav-link" id="health"href="#">Health</a>
+            <a class="nav-link text-dark" id="health"href="#">Health</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="science"href="#">Science</a>
+            <a class="nav-link text-dark" id="science"href="#">Science</a>
           </li>
           <li class="nav-item mx-5">
-            <a class="nav-link" id="sports"href="#">Sports</a>
+            <a class="nav-link text-dark" id="sports"href="#">Sports</a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" id="technology"href="#">Technology</a>
+            <a class="nav-link text-dark" id="technology"href="#">Technology</a>
           </li>
         </ul>
-      </div>
       <form class="d-flex">
         <input class="form-control me-2" id="searchWord" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-warning" id="searchbtn" type="submit">Search</button>
       </form>
+      </div>
     </div>
   </nav>
+  <!--weather!! -->
+  <div class="bg-dark bg-gradient  text-white" id="weather">
+    <div class="weather"></div>
+    <form class="d-flex">
+      <input class="form-control me-2" id="input-city" type="search" placeholder="City Name" aria-label="Search">
+      <button class="btn btn-outline-warning" id="srchcitybtn" type="submit">Search</button>
+    </form> 
+  </div>
 
   <!--card news-->
   <div class="album py-5 bg-light my-5">
