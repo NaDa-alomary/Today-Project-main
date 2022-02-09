@@ -1,8 +1,6 @@
-
+document.querySelector(".navbar-toggler").addEventListener("click", function(e){ document.querySelector("#SpartanNavbar").classList.toggle("show"); }); 
 /////////
 const apiKey= `7d7e7961b48a45d9bcb1d78f59329f2b`
-
-//
 
 let category="general";
 let newsApi=`https://newsapi.org/v2/top-headlines?category=${category}&sortBy=publishedAt&language=en&pageSize=9&apiKey=${apiKey}`
@@ -69,10 +67,12 @@ searchBtn.addEventListener("click",(event) =>{
 //weather api
 let weatherApiKey="014519cf89c748a284f7afaa0265440b"
 
+let city= "Riyadh";
 let searchCitybtn = document.getElementById("srchcitybtn");
 searchCitybtn.addEventListener("click",(event) => {
   event.preventDefault()
   city= document.getElementById("input-city").value;
+  
   fetchWeather();
 })
 
@@ -86,10 +86,10 @@ function fetchWeather(){
       let description = data.data[0].weather.description;
       let icon = data.data[0].weather.icon;
       document.querySelector(".weather").innerHTML = 
-      `<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-body">
+      `<div>
+      <div>
+        <div>
+          <div>
             <h5>${city_name}</h5>
             <h6>${temp}</h6>
             <h6>${description}</h6>

@@ -16,8 +16,8 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="./img/icon.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+      <a class="navbar-brand ms-3" href="#">
+        <img src="./img/icon.png" width="30" height="24" class="d-inline-block align-text-top">
         NRT News
       </a>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -41,7 +41,7 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
             <a class="nav-link text-dark" id="sports"href="#">Sports</a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link text-dark" id="technology"href="#">Technology</a>
+            <a class="nav-link text-dark me-3" id="technology"href="#">Technology</a>
           </li>
         </ul>
       <form class="d-flex">
@@ -52,16 +52,17 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
     </div>
   </nav>
   <!--weather!! -->
+  <div class="weather ms-5 mt-3"></div> 
   <div class="bg-dark bg-gradient p-4 text-white d-flex" id="weather">
-    <div class="m-2" > <h6>weather</h6></div>
+    <div class="mx-5 mt-3" > <h6>weather</h6></div>
     <form class="d-flex">
-      <input class="form-control me-2" id="input-city" type="search" placeholder="City Name" aria-label="Search">
-      <button type="submit" class="btn btn-outline-warning"id="srchcitybtn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <input class="form-control m-2" id="input-city" type="search" placeholder="City Name" aria-label="Search">
+      <button type="submit" class="btn btn-outline-warning"id="srchcitybtn" data-bs-target="#exampleModal">
         Search
       </button>
-    </form> 
-  </div>
-  <div class="weather"></div>
+    </form>
+  </div> 
+  
   <!--card news-->
   <div class="album py-5 bg-light my-5">
     <div class="container ">
